@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :animal_type, style: "display: block" %>
-    <%= form.number_field :animal_type %>
+    <%= form.select :animal_type, Booking.animal_types.keys %>
   </div>
 
   <div>
@@ -38,7 +38,7 @@
 
   <div>
     <%= form.label :date_of_service, style: "display: block" %>
-    <%= form.datetime_field :date_of_service %>
+    <%= form.date_field :date_of_service %>
   </div>
 
   <div>

@@ -5,8 +5,8 @@ class CreateBookings < ActiveRecord::Migration[7.0]
       t.string :last_name
       t.string :animal_name
       t.integer :animal_type
-      t.integer :hours_requested
-      t.datetime :date_of_service
+      t.float :hours_requested
+      t.date :date_of_service
 
       t.timestamps
     end

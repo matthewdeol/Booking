@@ -1,0 +1,15 @@
+current directory: /Users/matthewdeol/Workspace/LoadUpBookings/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/matthewdeol/.rbenv/versions/3.1.2/bin/ruby -I /Users/matthewdeol/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20240308-70663-n5772g.rb extconf.rb
+creating Makefile
+
+current directory: /Users/matthewdeol/Workspace/LoadUpBookings/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /Users/matthewdeol/Workspace/LoadUpBookings/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/matthewdeol/Workspace/LoadUpBookings/vendor/bundle/ruby/3.1.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/opt/homebrew/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20240308-70663-2gg7nr/skiptrace/internal
