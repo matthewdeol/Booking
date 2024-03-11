@@ -1,8 +1,20 @@
 require "test_helper"
 
 class BookingsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
+  def current_user
+    @current_user
+  end
+
   setup do
+    get '/users/sign_in'
+    @current_user = users(:one)
+    sign_in @current_user
+    post user_session_url
+
     @booking = bookings(:one)
+    @current_user.bookings = [@booking]
   end
 
   test "should get index" do

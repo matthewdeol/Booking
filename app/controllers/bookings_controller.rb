@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings or /bookings.json
   def index
-    @bookings = Booking.all
+      @bookings = current_user.bookings
   end
 
   # GET /bookings/1 or /bookings/1.json
@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
 
   # POST /bookings or /bookings.json
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new(booking_params.merge(user: current_user))
 
     respond_to do |format|
       if @booking.save
@@ -60,7 +60,7 @@ class BookingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_booking
-      @booking = Booking.find(params[:id])
+      @booking = current_user.bookings.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LoadUpGrooming</title>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <title>Perfect Harmony</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,6 +10,33 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header style="display:flex; align-items:center; padding: 25px; background-color:DodgerBlue;">
+      <%= image_tag 'rails.png', alt: 'The Perfect Harmony Pet Sitting' %>
+      <h1 style="text-color:white; padding-left:20px;">Perfect Harmony</h1>
+    </header>
+
+    <section style="display:flex; align-left:true;">
+      <nav class="bg-green-900 p-6" style="background-color:grey; width:5%; bottom:0;">
+        <ul class="text-gray-300 leading-8">
+          <li><a href="/">Home</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'New Booking', new_booking_path %></li>
+            <li><%= button_to "Sign out", destroy_user_session_path, method: :delete %></li>
+          <% elsif admin_signed_in? %>
+            <li><%= link_to "Bookings", admin_bookings_path %></li>
+            <li><%= button_to "Sign out", destroy_admin_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= button_to "Sign in to book", new_user_session_path %></li>
+            <li><%= button_to "Admin Login", new_admin_session_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+
+      <main class="container mx-auto mt-4 px-5 flex">
+        <p class="notice"><%= notice %></p> 
+        <p class="alert"><%= alert %></p> 
+        <%= yield %>
+      </main>
+    </section>
   </body>
 </html>

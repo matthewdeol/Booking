@@ -1,0 +1,11 @@
+user = User.first
+user.bookings
+exit
+Bookings.all.delete
+Booking.all.delete
+Booking.all.delete_all
+reload!
+exit
+user = User.first
+user.bookings
+exit

@@ -1,12 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  first_name: MyString
-  last_name: MyString
-  animal_name: MyString
+  first_name: Bob
+  last_name: Batz
+  animal_name: Fido
   animal_type: 1
-  hours_requested: 1
+  hours_requested: 3
   date_of_service: 2024-03-08 11:37:13
+  user: one
 
 two:
   first_name: MyString
@@ -15,3 +16,4 @@ two:
   animal_type: 1
   hours_requested: 1
   date_of_service: 2024-03-08 11:37:13
+  user: one
