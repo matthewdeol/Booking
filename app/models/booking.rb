@@ -3,15 +3,17 @@ class Booking < ApplicationRecord
     validates :hours_requested, numericality: { greater_than_or_equal_to: 2.0, less_than_or_equal_to: 8.0 }
     enum :animal_type, { dog: 0, cat: 1 }
 
-    belongs_to :user
+    before_validation :set_pricing
 
-    def price
-        (20 + (hours_requested * animal_fee))
-    end
+    belongs_to :user
 
     private
 
     def animal_fee
         dog? ? 10 : 5
+    end
+
+    def set_pricing
+        self.pricing = (20 + (self.hours_requested * self.animal_fee))
     end
 end
