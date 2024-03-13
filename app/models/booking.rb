@@ -14,6 +14,8 @@ class Booking < ApplicationRecord
     end
 
     def set_pricing
+        return if self.hours_requested.blank?
+        
         self.pricing = (20 + (self.hours_requested * self.animal_fee))
     end
 end

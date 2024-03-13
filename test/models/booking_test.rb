@@ -23,13 +23,23 @@ class BookingTest < ActiveSupport::TestCase
   end
 
   test "booking price for animal is 20 + (hours * rate)" do
-    booking = bookings(:one)
+    booking = Booking.new(
+      first_name: "bob",
+      last_name: "smith",
+      animal_name: "fido",
+      hours_requested: 3,
+      animal_type: 1,
+      date_of_service: "2024-03-08 11:37:13",
+      user: users(:one)
+    )
     booking.animal_type = :dog
+    booking.save!
 
-    assert_equal 50.0, booking.price
+    assert_equal 50.0, booking.pricing
 
     booking.animal_type = :cat
+    booking.save!
 
-    assert_equal 35.0, booking.price
+    assert_equal 35.0, booking.pricing
   end
 end
