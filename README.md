@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple app designed to book dog/cat sitting.
 
-Things you may want to cover:
+To be added:
 
-* Ruby version
+A checkout flow for payments,
 
-* System dependencies
+Email notifications when a booking is booked,
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Tying people to each booking (aka sitters)
